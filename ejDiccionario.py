@@ -32,13 +32,24 @@ numero_entradas = len(agenda)
 print(numero_entradas)
 # 12.Crea una lista llamada "claves" que contenga todas las claves del diccionario
 # “agenda".
-claves = {agenda[0]}
+claves = list(agenda.keys())
 print(claves)
 # 13.Verifica si la clave "Juan" existe en el diccionario "agenda". Imprime "True" si existe y
 # "False" en caso contrario.
+estaJuan = "Juan" in agenda
+print(estaJuan)
 # 14.Elimina la entrada con la clave “Jimena”.
+agenda.pop('Jimena')
+print(agenda)
 # 15.Utiliza un bucle for para iterar sobre todas las claves en el diccionario "agenda" e
 # imprime cada par clave-valor en el formato "Nombre: Número”.
+for nombre, numero in agenda.items():
+    print(f"{nombre}: {numero}")
 # 16.Utiliza el método "get()" para obtener el valor asociado con la clave "Juan" en el
 # diccionario "agenda". Si la clave no existe, imprime "Clave no encontrada”.
+JuanGet = agenda.get('Juan')
+
+if not JuanGet:
+    print("Clave no encontrada")
 # 17.Borra todas las entradas del diccionario “agenda”.
+agenda.clear()
