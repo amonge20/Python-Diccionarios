@@ -45,3 +45,34 @@ imprime cada par clave-valor en el formato "Nombre: Número”.
 diccionario "agenda". Si la clave no existe, imprime "Clave no encontrada”.
 
 17.Borra todas las entradas del diccionario “agenda”.
+
+# Ejercicios practicos de Diccionarios
+
+Administracion_Proyectos.py
+
+Eres un gerente de proyectos y necesitas un programa para administrar
+las tareas y responsabilidades de tu equipo. Cada tarea tiene un nombre,
+una descripción y un responsable asignado. Implementa un programa en
+Python que utilice un diccionario para almacenar la información de las
+tareas. El programa debe permitir agregar nuevas tareas, asignar
+responsables a las tareas existentes, actualizar las descripciones de las
+tareas y mostrar la lista completa de tareas y responsables. 
+
+Registro_Asistencias.py
+
+Eres un profesor y deseas realizar un seguimiento de la asistencia de tus
+estudiantes a lo largo del semestre. Cada estudiante tiene un nombre y
+una lista de fechas en las que asistió a clases. Implementa un programa
+en Python que utilice un diccionario para almacenar la información de las
+asistencias. El programa debe permitir registrar la asistencia de los
+estudiantes, agregar nuevas fechas de asistencia y mostrar la lista de
+estudiantes y las fechas en las que asistieron.
+
+Registro_Ventas.py
+
+Tienes una tienda y deseas realizar un seguimiento de las ventas diarias
+de tus productos. Cada producto tiene un nombre y una cantidad
+vendida. Implementa un programa en Python que utilice un diccionario
+para almacenar la información de las ventas. El programa debe permitir
+registrar las ventas de productos, actualizar la cantidad vendida de un
+producto existente y calcular el total de ventas diarias.
