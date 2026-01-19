@@ -6,38 +6,73 @@
 # responsables a las tareas existentes, actualizar las descripciones de las
 # tareas y mostrar la lista completa de tareas y responsables. 
 
+# Lista vacia
 proyectos = {}
 
-# Agregar nuevas tareas
-Agregar_tareas = {'Tarea 1': {'descripcion': 'Diseñar el logo', 'responsable': 'Ana'},
-                  'Tarea 2': {'descripcion': 'Desarrollar la web', 'responsable': 'Luis'},
-                  'Tarea 3': {'descripcion': 'Crear contenido', 'responsable': 'Marta'}
-                  }
+# Se mantiene por defecto true
+continuar = True
 
-# Registrar tareas en el diccionario de proyectos
-for tarea, detalles in Agregar_tareas.items():
-    proyectos[tarea] = detalles
-print("Tareas registradas:", proyectos)
+# Menu interactivo para gestionar el proyecto siendo el gerente
+while continuar == True:
+    print("--- ADMINISTRACIÓN DE PROYECTOS ---")
+    print("1. Añadir tarea, descripcion y responsable")
+    print("2. Asignar tarea existente a un responsable")
+    print("3. Actualizar la tarea existente")
+    print("4. Mostrar las tareas actuales")
+    print("5. Salir")
 
-# Asignar responsables a las tareas existentes
-tarea_a_asignar = 'Tarea 2'
-nuevo_responsable = 'Carlos'
-if tarea_a_asignar in proyectos:
-    proyectos[tarea_a_asignar]['responsable'] = nuevo_responsable
-    print(f"Responsable actualizado de {tarea_a_asignar}: {proyectos[tarea_a_asignar]['responsable']}")
-else:
-    print(f"La tarea {tarea_a_asignar} no existe en el registro de proyectos.")
+    numero_seleccionado = int(input("Por favor selecciona un numero: "))
 
-# Actualizar descripciones de las tareas
-tarea_a_actualizar = 'Tarea 1'
-nueva_descripcion = 'Diseñar el logo corporativo'
-if tarea_a_actualizar in proyectos:
-    proyectos[tarea_a_actualizar]['descripcion'] = nueva_descripcion
-    print(f"Descripción actualizada de {tarea_a_actualizar}: {proyectos[tarea_a_actualizar]['descripcion']}")
-else:
-    print(f"La tarea {tarea_a_actualizar} no existe en el registro de proyectos.")
-    
-# Mostrar la lista completa de tareas y responsables
-print("Lista completa de tareas y responsables:")
-for tarea, detalles in proyectos.items():
-    print(f"{tarea}: Descripción: {detalles['descripcion']}, Responsable: {detalles['responsable']}")
+    # Añadimos nueva tarea, descripción y responsable
+    if numero_seleccionado == 1:
+        tarea_nueva = input("Introduce una tarea: ")
+        nueva_descripcion = input("Introduce descripción: ")
+        nuevo_responsable = input("Introduce el nombre del responsable: ")
+
+        # Se añade la nueva tarea, junto la descripcion más el responsable de esa tarea
+        proyectos[tarea_nueva] = {
+            "descripcion": nueva_descripcion,
+            "responsable": nuevo_responsable
+        }
+
+    # Asignar una tarea existente a un responsable
+    elif numero_seleccionado == 2:
+        tarea = input("Introduce una tarea existente: ")
+        responsable = input("Introduce a un responsable existente para esta tarea: ")
+
+        # Si la tarea no existe
+        if tarea not in proyectos:
+            print("La tarea no existe")
+
+        # Si el responsable no existe
+        elif responsable not in [d["responsable"] for d in proyectos.values()]:
+            print("El responsable no existe")
+
+        # Se le asigna la tarea existente a otro responsable existente
+        else:
+            proyectos[tarea]["responsable"] = responsable
+            print("Tarea asignada a ",responsable)
+
+    # Actualizar la tarea existente
+    elif numero_seleccionado == 3:
+        tarea = input("Introduce una tarea existente: ")
+
+        # Si la tarea no existe
+        if tarea not in proyectos:
+            print("La tarea no existe")
+
+        # Introduce la nueva descripcion de la tarea existente
+        else:
+            nueva_descripcion = input("Introduce la nueva descripción: ")
+            proyectos[tarea]["descripcion"] = nueva_descripcion
+            print("Descripcion de la tarea existente actualizada")
+
+    # Mostrar la lista completa de tareas y responsables
+    elif numero_seleccionado == 4:
+        for tarea, detalles in proyectos.items():
+             print(f"{tarea} - Descripción: {detalles['descripcion']}, Responsable: {detalles['responsable']}")
+
+    # Fin del programa
+    else:
+        continuar = False
+        break
