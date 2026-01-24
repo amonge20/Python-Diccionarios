@@ -58,6 +58,14 @@ tareas. El programa debe permitir agregar nuevas tareas, asignar
 responsables a las tareas existentes, actualizar las descripciones de las
 tareas y mostrar la lista completa de tareas y responsables. 
 
+Analisis_votantes.py
+
+Supongamos que tienes los resultados de una elección con los nombres de los candidatos y la cantidad de votos obtenidos por cada uno. Implementa un programa en Python que permita registrar los votos, mostrar la lista completa de candidatos y sus votos, encontrar al candidato ganador (con más votos) y calcular el porcentaje de votos que obtuvo cada candidato.
+
+Gestion_empleados.py
+
+Imagina que eres el gerente de recursos humanos de una empresa y necesitas gestionar la información de los empleados. Cada empleado tiene un nombre, salario y departamento al que pertenece. Implementa un programa en Python que permita agregar nuevos empleados, actualizar el salario de un empleado existente, mostrar la lista completa de empleados y calcular el promedio salarial por departamento.
+
 Registro_Asistencias.py
 
 Eres un profesor y deseas realizar un seguimiento de la asistencia de tus
@@ -67,6 +75,11 @@ en Python que utilice un diccionario para almacenar la información de las
 asistencias. El programa debe permitir registrar la asistencia de los
 estudiantes, agregar nuevas fechas de asistencia y mostrar la lista de
 estudiantes y las fechas en las que asistieron.
+
+Registro_ventas.py
+
+Tienes una tienda y deseas realizar un seguimiento de las ventas diarias de tus productos. Cada producto tiene un nombre y una cantidad vendida. Implementa un programa en Python que utilice un diccionario para almacenar la información de las ventas. El programa debe permitir
+registrar las ventas de productos, actualizar la cantidad vendida de un producto existente y calcular el total de ventas diarias.
 
 Registro_Ventas.py
 
